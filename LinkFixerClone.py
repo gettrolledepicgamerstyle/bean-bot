@@ -3,8 +3,8 @@ import re
 from collections import deque 
 from time import sleep
 
-USERNAME = 'your username here'
-PASSOWRD = 'your password here'
+USERNAME = "Your username here"
+PASSWORD = "Your password here"
 
 r = praw.Reddit('A linkfixerbot clone (because the author was being mean and not sharing their source) by /u/shaggorama')
 r.login(USERNAME,PASSWORD) # necessary if your bot will talk to people
@@ -26,7 +26,7 @@ def check_condition(comment):
 def bot_action(c, links):
     text = ''
     for link in links:
-        text += "/" + link + "\n"
+        text += "/" + link[1:] + "\n"
     print c.author.name, c.subreddit.display_name, c.submission.title
     print text
     c.reply(text)
