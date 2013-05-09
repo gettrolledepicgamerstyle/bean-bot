@@ -11,8 +11,8 @@ r.login(USERNAME,PASSWORD) # necessary if your bot will talk to people
 
 cache = deque(maxlen=200)
 
-r_pat = re.compile('r/[A-Za-z0-9]+')
-u_pat = re.compile('u/[A-Za-z0-9]+')
+r_pat = re.compile(' r/[A-Za-z0-9]+')
+u_pat = re.compile(' u/[A-Za-z0-9]+')
 
 def check_condition(comment):
     text = comment.body    
