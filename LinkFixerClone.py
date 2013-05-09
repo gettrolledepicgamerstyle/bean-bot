@@ -3,10 +3,11 @@ import re
 from collections import deque 
 from time import sleep
 
-USERNAME = "Your username here"
-PASSWORD = "Your password here"
+USERNAME  = "Your username here"
+PASSWORD  = "Your password here"
+USERAGENT = "Your useragent string here. It should include your /u/username as a courtesy to reddit"
 
-r = praw.Reddit('A linkfixerbot clone (because the author was being mean and not sharing their source) by /u/shaggorama')
+r = praw.Reddit(USERAGENT)
 r.login(USERNAME,PASSWORD) # necessary if your bot will talk to people
 
 cache = deque(maxlen=200)
