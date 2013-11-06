@@ -10,7 +10,7 @@ USERAGENT = "Your useragent string here. It should include your /u/username as a
 r = praw.Reddit(USERAGENT)
 r.login(USERNAME,PASSWORD) # necessary if your bot will talk to people
 
-cache = deque(maxlen=200)
+cache = deque(maxlen=200) # To make sure we don't duplicate effort
 
 r_pat = re.compile(' r/[A-Za-z0-9]+')
 u_pat = re.compile(' u/[A-Za-z0-9]+')
